@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    tools:context=".Test.TestUser"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp"
+        android:paddingBottom="5dp"
+        android:background="@drawable/border_blue">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="5dp">
+
+            <TextView
+                android:id="@+id/item_list_nama"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:text="nama"
+                android:layout_margin="2dp"
+                android:fontFamily="serif"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:id="@+id/item_list_username"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:text="username"
+                android:layout_margin="2dp"
+                android:fontFamily="serif"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:id="@+id/item_list_password"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:text="password"
+                android:layout_margin="2dp"
+                android:fontFamily="serif"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginRight="5dp">
+
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:text="update"
+                android:textColor="@android:color/white"
+                android:id="@+id/btn_update_user"/>
+
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:text="delete"
+                android:textColor="@android:color/white"
+                android:id="@+id/btn_delete_user"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
