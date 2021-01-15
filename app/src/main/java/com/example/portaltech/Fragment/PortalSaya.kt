@@ -5,7 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.portaltech.AddNews
 import com.example.portaltech.R
+import kotlinx.android.synthetic.main.fragment_portal_saya.*
+import kotlinx.android.synthetic.main.fragment_portal_saya.view.*
+import org.jetbrains.anko.support.v4.act
+import org.jetbrains.anko.support.v4.startActivity
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -34,8 +39,13 @@ class PortalSaya : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_portal_saya, container, false)
+        val view = inflater.inflate(R.layout.fragment_portal_saya, container, false)
+
+        view.btn_tambah_berita.setOnClickListener{
+            startActivity<AddNews>()
+            activity?.finish()
+        }
+        return view
     }
 
     companion object {

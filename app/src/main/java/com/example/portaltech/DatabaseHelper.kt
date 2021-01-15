@@ -24,10 +24,20 @@ class DatabaseHelper(context: Context): ManagedSQLiteOpenHelper(context, "portal
             DataUser.USERNAME to TEXT + PRIMARY_KEY,
             DataUser.PASSWORD to TEXT
         )
+        p0?.createTable(
+            DataNews.TABLE_NEWS,
+            true,
+            DataNews.TITLE to TEXT,
+            DataNews.TANGGAL to TEXT,
+            DataNews.NEWS to TEXT,
+            DataNews.ID to INTEGER + PRIMARY_KEY + AUTOINCREMENT,
+            DataNews.IMAGE to TEXT
+        )
     }
 
     override fun onUpgrade(p0: SQLiteDatabase?, p1: Int, p2: Int) {
         p0?.dropTable(DataUser.TABLE_USER, true)
+        p0?.dropTable(DataNews.TABLE_NEWS, true)
     }
 }
 val Context.database: DatabaseHelper

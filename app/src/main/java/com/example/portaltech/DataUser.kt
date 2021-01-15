@@ -2,6 +2,7 @@ package com.example.portaltech
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
+import java.text.DateFormat
 
 @Parcelize
 data class DataUser(
@@ -16,3 +17,4 @@ data class DataUser(
         const val PASSWORD= "password"
     }
 }
+

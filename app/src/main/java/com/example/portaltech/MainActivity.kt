@@ -6,6 +6,7 @@ import android.os.Bundle
 import com.example.portaltech.Test.TestUser
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.startActivity
+import org.jetbrains.anko.toast
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,7 +19,7 @@ class MainActivity : AppCompatActivity() {
 
         btn_masuk.setOnClickListener {
             startActivity<Home>()
+            finish()
         }
     }
-
 }

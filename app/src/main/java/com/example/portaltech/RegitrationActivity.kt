@@ -60,5 +60,6 @@ class RegitrationActivity : AppCompatActivity() {
 
     private fun BackHome(){
         startActivity(Intent(this, MainActivity::class.java))
+        finish()
     }
 }

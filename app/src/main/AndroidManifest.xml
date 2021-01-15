@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PortalTech">
-        <activity android:name=".Home"></activity>
+        <activity android:name=".AddNews"></activity>
+        <activity android:name=".ReadNews" />
+        <activity android:name=".Home" />
         <activity android:name=".UpdateUser" />
         <activity android:name=".Test.TestUser" />
         <activity android:name=".RegitrationActivity" />
