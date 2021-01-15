@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Fragment.Beranda">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
-    <RelativeLayout
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".ui.home.HomeFragment">
+        android:layout_height="wrap_content">
 
-        android:layout_gravity="bottom"
-        android:layout_marginTop="10dp"
-        android:paddingStart="5dp"
-        android:paddingEnd="5dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/berita1"
@@ -22,7 +21,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 app:cardBackgroundColor="@color/white"
-                app:cardCornerRadius="10dp">
+                app:cardCornerRadius="10dp"
+                app:cardElevation="3dp">
 
                 <ImageView
                     android:id="@+id/imgberita"
@@ -64,7 +64,7 @@
                             android:textAlignment="viewStart"
                             android:textColor="@color/black"
                             android:textSize="12sp"
-                            android:text="@string/tgl_1"
+                            android:text="9 Jan 2021"
                             android:fontFamily="sans-serif-light"/>
 
                     </LinearLayout>
@@ -73,5 +73,8 @@
 
             </androidx.cardview.widget.CardView>
 
-    </RelativeLayout>
-</FrameLayout>
+        </RelativeLayout>
+
+    </FrameLayout>
+
+</RelativeLayout>
