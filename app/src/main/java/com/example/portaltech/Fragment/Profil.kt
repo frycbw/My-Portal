@@ -49,7 +49,6 @@ class Profil : Fragment() {
 
         view.btn_lihat_user.setOnClickListener {
             startActivity<TestUser>()
-            activity?.finish()
         }
         return view
     }

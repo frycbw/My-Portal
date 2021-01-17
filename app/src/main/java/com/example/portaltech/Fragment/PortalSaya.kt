@@ -43,7 +43,6 @@ class PortalSaya : Fragment() {
 
         view.btn_tambah_berita.setOnClickListener{
             startActivity<AddNews>()
-            activity?.finish()
         }
         return view
     }

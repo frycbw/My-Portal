@@ -1,6 +1,7 @@
 package com.example.portaltech
 
 import android.content.Context
+import android.database.Cursor
 import org.jetbrains.anko.db.*
 import android.database.sqlite.SQLiteDatabase
 
@@ -24,20 +25,33 @@ class DatabaseHelper(context: Context): ManagedSQLiteOpenHelper(context, "portal
             DataUser.USERNAME to TEXT + PRIMARY_KEY,
             DataUser.PASSWORD to TEXT
         )
-        p0?.createTable(
-            DataNews.TABLE_NEWS,
-            true,
-            DataNews.TITLE to TEXT,
-            DataNews.TANGGAL to TEXT,
-            DataNews.NEWS to TEXT,
-            DataNews.ID to INTEGER + PRIMARY_KEY + AUTOINCREMENT,
-            DataNews.IMAGE to TEXT
-        )
     }
 
     override fun onUpgrade(p0: SQLiteDatabase?, p1: Int, p2: Int) {
         p0?.dropTable(DataUser.TABLE_USER, true)
-        p0?.dropTable(DataNews.TABLE_NEWS, true)
+
+    }
+
+    fun cekData(username: String?): DataUser? {
+        val query =
+            "SELECT * FROM ${DataUser.TABLE_USER} WHERE ${DataUser.USERNAME} =  \"$username\""
+
+        val db = this.writableDatabase
+        val cursor = db.rawQuery(query,null)
+        var dataUser: DataUser? = null
+
+        if(cursor.moveToFirst()){
+            cursor.moveToFirst()
+
+            val nama = cursor.getString(0)
+            val username_ = cursor.getString(1)
+            val password = cursor.getString(2)
+
+            dataUser = DataUser(nama,username_,password)
+            cursor.close()
+        }
+        db.close()
+        return dataUser
     }
 }
 val Context.database: DatabaseHelper

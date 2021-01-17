@@ -3,6 +3,7 @@ package com.example.portaltech
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_regitration.*
 import org.jetbrains.anko.db.insert
 import org.jetbrains.anko.sdk27.coroutines.onClick
@@ -14,11 +15,16 @@ class RegitrationActivity : AppCompatActivity() {
         setContentView(R.layout.activity_regitration)
 
         btn_daftar.onClick{
+            val dataUser = database.cekData(edt_regis_username.text.toString())
             if (!ValidatorNull()){
                 return@onClick
             }else{
-                InsertData()
-                BackHome()
+                if (dataUser != null){
+                    toast("Username Telah Digunakan")
+                }else{
+                    InsertData()
+                    BackHome()
+                }
             }
         }
     }
